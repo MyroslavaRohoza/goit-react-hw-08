@@ -1,0 +1,1 @@
+export const selectContactsIsLoading = (state) => state.contacts.loading;

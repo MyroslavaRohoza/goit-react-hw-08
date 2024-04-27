@@ -5,7 +5,8 @@ import * as Yup from "yup";
 import css from "./ContactForm.module.css";
 import { MAX_CHAR_VALIDATION } from "../../components/../validationValues.js";
 import { MIN_CHAR_VALIDATION } from "../../components/../validationValues.js";
-import { addContact } from "../../redux/contactsOps.js";
+import { addContact } from "../../redux/contacts/operations.js";
+
 
 const FeedbackSchema = Yup.object().shape({
   name: Yup.string()
