@@ -5,16 +5,20 @@ import * as Yup from "yup";
 import {
   MAX_CHAR_VALIDATION,
   MIN_CHAR_VALIDATION,
+  MIN_PASSWORD_CHAR_VALIDATION,
 } from "../../validationValues";
 
-const FeedbackSchema = Yup.object().shape({
+const logInUserSchema = Yup.object().shape({
   email: Yup.string()
     .min(MIN_CHAR_VALIDATION, `At least ${MIN_CHAR_VALIDATION} characters`)
     .max(MAX_CHAR_VALIDATION, `Up to ${MAX_CHAR_VALIDATION} characters`)
     .required("Required!"),
   password: Yup.string()
     .min(MIN_CHAR_VALIDATION, `At least ${MIN_CHAR_VALIDATION} characters`)
-    .max(MAX_CHAR_VALIDATION, `Up to ${MAX_CHAR_VALIDATION} characters`)
+    .max(
+      MAX_CHAR_VALIDATION,
+      `Up to ${MIN_PASSWORD_CHAR_VALIDATION} characters`
+    )
     .required("Required!"),
 });
 const LoginForm = () => {
@@ -33,14 +37,14 @@ const LoginForm = () => {
     <Formik
       initialValues={FormInitialValues}
       onSubmit={handleSubmit}
-      validationSchema={FeedbackSchema}
+      validationSchema={logInUserSchema}
     >
       <Form>
         <label htmlFor={emailId}>Email</label>
         <Field type="email" name="email" id={emailId} />
         <ErrorMessage name="email" component="span" />
         <label htmlFor={passwordId}>Password</label>
-        <Field type="text" name="password" id={passwordId} />
+        <Field type="password" name="password" id={passwordId} />
         <ErrorMessage name="password" component="span" />
         <button type="submit">Log in</button>
       </Form>
