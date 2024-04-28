@@ -1,17 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
-
-export const instance = axios.create({
-  baseURL: "https://connections-api.herokuapp.com",
-});
-
-export function setToken(token) {
-  instance.defaults.headers.common.Authorization = `Bearer ${token}`;
-}
-
-export function removeToken() {
-  instance.defaults.headers.common.Authorization = '';
-}
+import {  login, register } from "./operations";
 
 const initialState = {
   user: {
@@ -26,6 +14,24 @@ const initialState = {
 const authSlice = createSlice({
   name: "auth",
   initialState: initialState,
+  extraReducers: (builder) =>
+    builder
+      .addCase(register.fulfilled, (state, action) => {
+        state.isLoggedIn = true;
+        state.user.name = action.payload.user.name;
+        state.user.email = action.payload.user.email;
+      })
+      .addCase(register.rejected, (state) => {
+        state.isLoggedIn = false;
+      })
+      .addCase(login.fulfilled, (state, action) => {
+        state.isLoggedIn = true;
+        state.user.name = action.payload.user.name;
+        state.user.email = action.payload.user.email;
+      })
+      .addCase(login.rejected, (state) => {
+        state.isLoggedIn = false;
+      }),
 });
 
 export const authReducer = authSlice.reducer;

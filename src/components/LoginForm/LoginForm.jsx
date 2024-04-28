@@ -7,6 +7,8 @@ import {
   MIN_CHAR_VALIDATION,
   MIN_PASSWORD_CHAR_VALIDATION,
 } from "../../validationValues";
+import { login } from "../../redux/auth/operations";
+// import { login } from "../../redux/auth/operations";
 
 const logInUserSchema = Yup.object().shape({
   email: Yup.string()
@@ -22,9 +24,9 @@ const logInUserSchema = Yup.object().shape({
     .required("Required!"),
 });
 const LoginForm = () => {
+  const dispatch = useDispatch();
   const handleSubmit = (values, actions) => {
-    console.log(values);
-
+    dispatch(login(values));
     actions.resetForm();
   };
   const FormInitialValues = {

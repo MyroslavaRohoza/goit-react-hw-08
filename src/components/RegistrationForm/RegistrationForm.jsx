@@ -7,6 +7,7 @@ import {
   MIN_CHAR_VALIDATION,
   MIN_PASSWORD_CHAR_VALIDATION,
 } from "../../validationValues";
+import { register } from "../../redux/auth/operations";
 
 const registerUserSchema = Yup.object().shape({
   name: Yup.string()
@@ -18,13 +19,17 @@ const registerUserSchema = Yup.object().shape({
     .max(MAX_CHAR_VALIDATION, `Up to ${MAX_CHAR_VALIDATION} characters`)
     .required("Required!"),
   password: Yup.string()
-    .min(MIN_CHAR_VALIDATION, `At least ${MIN_PASSWORD_CHAR_VALIDATION} characters`)
+    .min(
+      MIN_CHAR_VALIDATION,
+      `At least ${MIN_PASSWORD_CHAR_VALIDATION} characters`
+    )
     .max(MAX_CHAR_VALIDATION, `Up to ${MAX_CHAR_VALIDATION} characters`)
     .required("Required!"),
 });
 const RegistrationForm = () => {
+  const dispatch = useDispatch();
   const handleSubmit = (values, actions) => {
-    console.log(values);
+    dispatch(register(values));
 
     actions.resetForm();
   };
@@ -54,7 +59,7 @@ const RegistrationForm = () => {
         <label htmlFor={passwordId}>Password</label>
         <Field type="password" name="password" id={passwordId} />
         <ErrorMessage name="password" component="span" />
-        
+
         <button type="submit">Sign up</button>
       </Form>
     </Formik>
