@@ -6,10 +6,20 @@ import RegistrationPage from "../pages/RegistrationPage/RegistrationPage";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import ContactsPage from "../pages/ContactsPage/ContactsPage";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { refreshUser } from "../redux/auth/operations";
+import { selectisRefreshing } from "../redux/auth/selectors";
 
 function App() {
+  const dispatch = useDispatch();
+  const isRefreshing = useSelector(selectisRefreshing);
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
   return (
-    <Layout>
+    isRefreshing ? (<p>Refreshing...</p>) : (<Layout>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/register" element={<RegistrationPage />} />
@@ -17,7 +27,8 @@ function App() {
         <Route path="/contacts" element={<ContactsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </Layout>
+    </Layout>)
+    
   );
 }
 
