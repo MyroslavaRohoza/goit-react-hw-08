@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { refreshUser } from "../redux/auth/operations";
 import { selectisRefreshing } from "../redux/auth/selectors";
+import RestrictedRoute from "./RestrictedRoute/RestrictedRoute";
 
 function App() {
   const dispatch = useDispatch();
@@ -19,16 +20,30 @@ function App() {
   }, [dispatch]);
 
   return (
-    isRefreshing ? (<p>Refreshing...</p>) : (<Layout>
+    // isRefreshing ? (<p>Refreshing...</p>) :
+    <Layout>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/register" element={<RegistrationPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route
+          path="/register"
+          element={
+            <RestrictedRoute>
+              <RegistrationPage />
+            </RestrictedRoute>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute>
+              <LoginPage />
+            </RestrictedRoute>
+          }
+        />
         <Route path="/contacts" element={<ContactsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </Layout>)
-    
+    </Layout>
   );
 }
 

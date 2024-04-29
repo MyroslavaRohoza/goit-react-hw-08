@@ -3,8 +3,10 @@ import AppBar from "../AppBar/AppBar";
 const Layout = ({ children }) => {
   return (
     <>
-      <AppBar />
-      <div>{children}</div>
+      <header>
+        <AppBar />
+      </header>
+      <main>{children}</main>
     </>
   );
 };
