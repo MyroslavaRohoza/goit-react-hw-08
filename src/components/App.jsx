@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { refreshUser } from "../redux/auth/operations";
 import { selectisRefreshing } from "../redux/auth/selectors";
 import RestrictedRoute from "./RestrictedRoute/RestrictedRoute";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 function App() {
   const dispatch = useDispatch();
@@ -40,7 +41,14 @@ function App() {
             </RestrictedRoute>
           }
         />
-        <Route path="/contacts" element={<ContactsPage />} />
+        <Route
+          path="/contacts"
+          element={
+            <PrivateRoute>
+              <ContactsPage />
+            </PrivateRoute>
+          }
+        />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Layout>
