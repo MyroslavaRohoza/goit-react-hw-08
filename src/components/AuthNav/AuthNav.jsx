@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
 
-const AuthNav = () => {
+const AuthNav = ({buildLinkClass}) => {
   return (
     <>
-      <NavLink to="/register">Sign up</NavLink>
-      <NavLink to="/login">Log in</NavLink>
+      <NavLink to="/register" className={buildLinkClass}>Sign up</NavLink>
+      <NavLink to="/login" className={buildLinkClass}>Log in</NavLink>
     </>
   );
 };

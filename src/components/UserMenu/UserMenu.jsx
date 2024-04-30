@@ -4,7 +4,7 @@ import { selectUserName } from "../../redux/auth/selectors";
 import LogOutBtn from "../LogOutBtn/LogOutBtn";
 import { logout } from "../../redux/auth/operations";
 
-const UserMenu = () => {
+const UserMenu = ({buildLinkClass}) => {
   const dispatch = useDispatch();
 
   function onBtnClick(){
@@ -14,7 +14,7 @@ const UserMenu = () => {
   const userName = useSelector(selectUserName);
   return (
     <>
-      <NavLink to="/contacts">Contacts</NavLink>
+      <NavLink to="/contacts" className={buildLinkClass}>Contacts</NavLink>
       <div>
         <p>Welcome, {userName}</p>
        <LogOutBtn  onBtnClick={onBtnClick}/>
