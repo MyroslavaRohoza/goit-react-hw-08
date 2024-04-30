@@ -6,7 +6,7 @@ import css from "./ContactForm.module.css";
 import { MAX_CHAR_VALIDATION } from "../../components/../validationValues.js";
 import { MIN_CHAR_VALIDATION } from "../../components/../validationValues.js";
 import { addContact } from "../../redux/contacts/operations.js";
-
+import toast from "react-hot-toast";
 
 const FeedbackSchema = Yup.object().shape({
   name: Yup.string()
@@ -25,6 +25,7 @@ const ContactForm = () => {
       ...formContact,
     };
     dispatch(addContact(finalFormContact));
+    toast.success(<span>Your contact was successfully added</span>);
   }
 
   const handleSubmit = (values, actions) => {

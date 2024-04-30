@@ -12,6 +12,7 @@ import { refreshUser } from "../redux/auth/operations";
 import { selectisRefreshing } from "../redux/auth/selectors";
 import RestrictedRoute from "./RestrictedRoute/RestrictedRoute";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import PopUpWindow from "./PopUpWindow/PopUpWindow";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ function App() {
   return (
     // isRefreshing ? (<p>Refreshing...</p>) :
     <Layout>
+      <PopUpWindow />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route

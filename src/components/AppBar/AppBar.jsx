@@ -7,7 +7,6 @@ import UserMenu from "../UserMenu/UserMenu";
 
 const AppBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  console.log(isLoggedIn);
   return (
     <nav>
       <Navigation />
