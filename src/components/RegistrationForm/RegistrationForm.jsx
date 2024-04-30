@@ -1,4 +1,8 @@
 import { useDispatch } from "react-redux";
+
+import { Button } from "antd";
+
+import css from "./RegistrationForm.module.css";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useId } from "react";
 import * as Yup from "yup";
@@ -26,6 +30,7 @@ const registerUserSchema = Yup.object().shape({
     .max(MAX_CHAR_VALIDATION, `Up to ${MAX_CHAR_VALIDATION} characters`)
     .required("Required!"),
 });
+
 const RegistrationForm = () => {
   const dispatch = useDispatch();
   const handleSubmit = (values, actions) => {
@@ -47,20 +52,22 @@ const RegistrationForm = () => {
       onSubmit={handleSubmit}
       validationSchema={registerUserSchema}
     >
-      <Form>
+      <Form className={css.registrationForm}>
         <label htmlFor={nameId}>Name</label>
         <Field type="text" name="name" id={nameId} />
         <ErrorMessage name="name" component="span" />
-
         <label htmlFor={emailId}>Email</label>
         <Field type="email" name="email" id={emailId} />
         <ErrorMessage name="email" component="span" />
-
         <label htmlFor={passwordId}>Password</label>
         <Field type="password" name="password" id={passwordId} />
         <ErrorMessage name="password" component="span" />
-
-        <button type="submit">Sign up</button>
+        <div className={css.registrationBtnContainer}>
+          <Button type="primary" htmlType="reset" className={css.resetBtn} danger>
+            Reset
+          </Button>
+          <Button htmlType="submit" className={css.submitBtn}>Sign up</Button>
+        </div>
       </Form>
     </Formik>
   );
