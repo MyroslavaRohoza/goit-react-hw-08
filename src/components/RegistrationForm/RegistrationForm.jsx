@@ -1,7 +1,8 @@
 import { useDispatch } from "react-redux";
-
-import { Button } from "antd";
-
+import { RxAvatar } from "react-icons/rx";
+import { Button, ConfigProvider } from "antd";
+import { MdOutlineMailOutline } from "react-icons/md";
+import { RiLockPasswordLine } from "react-icons/ri";
 import css from "./RegistrationForm.module.css";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useId } from "react";
@@ -54,19 +55,78 @@ const RegistrationForm = () => {
     >
       <Form className={css.registrationForm}>
         <label htmlFor={nameId}>Name</label>
-        <Field type="text" name="name" id={nameId} />
-        <ErrorMessage name="name" component="span" />
+
+        <div className={css.InputIconContainer}>
+          <RxAvatar className={css.formIcon} size={22} />
+          <Field
+            type="text"
+            name="name"
+            id={nameId}
+            className={css.inputField}
+          />
+        </div>
+
+        <ErrorMessage
+          name="name"
+          component="span"
+          className={css.errorMessage}
+        />
+
         <label htmlFor={emailId}>Email</label>
-        <Field type="email" name="email" id={emailId} />
-        <ErrorMessage name="email" component="span" />
+        <div className={css.InputIconContainer}>
+       
+          <MdOutlineMailOutline className={css.formIcon} size={22} />
+          <Field
+            type="email"
+            name="email"
+            id={emailId}
+            className={css.inputField}
+          />
+        </div>
+
+        <ErrorMessage
+          name="email"
+          component="span"
+          className={css.errorMessage}
+        />
+
         <label htmlFor={passwordId}>Password</label>
-        <Field type="password" name="password" id={passwordId} />
-        <ErrorMessage name="password" component="span" />
+        <div className={css.InputIconContainer}>
+          <RiLockPasswordLine className={css.formIcon} size={22} />
+          <Field
+            type="password"
+            name="password"
+            id={passwordId}
+            className={css.inputField}
+          />
+        </div>
+
+        <ErrorMessage
+          name="password"
+          component="span"
+          className={css.errorMessage}
+        />
+
         <div className={css.registrationBtnContainer}>
-          <Button type="primary" htmlType="reset" className={css.resetBtn} danger>
-            Reset
+          <Button
+            type="primary"
+            htmlType="reset"
+            className={css.resetBtn}
+            danger
+          >
+            Clear
           </Button>
-          <Button htmlType="submit" className={css.submitBtn}>Sign up</Button>
+          <ConfigProvider
+            theme={{
+              token: {
+                colorPrimary: "#91FF36",
+              },
+            }}
+          >
+            <Button type="primary" htmlType="submit">
+              Sign up
+            </Button>
+          </ConfigProvider>
         </div>
       </Form>
     </Formik>
