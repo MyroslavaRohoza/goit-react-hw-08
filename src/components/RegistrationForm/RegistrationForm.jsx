@@ -54,10 +54,13 @@ const RegistrationForm = () => {
       validationSchema={registerUserSchema}
     >
       <Form className={css.registrationForm}>
-        <label htmlFor={nameId}>Name</label>
+        <label htmlFor={nameId} className={css.formLabel}>
+          Name
+        </label>
 
         <div className={css.InputIconContainer}>
-          <RxAvatar className={css.formIcon} size={22} />
+          <RxAvatar className={css.formIcon} size={24} />
+
           <Field
             type="text"
             name="name"
@@ -72,10 +75,11 @@ const RegistrationForm = () => {
           className={css.errorMessage}
         />
 
-        <label htmlFor={emailId}>Email</label>
+        <label htmlFor={emailId} className={css.formLabel}>
+          Email
+        </label>
         <div className={css.InputIconContainer}>
-       
-          <MdOutlineMailOutline className={css.formIcon} size={22} />
+          <MdOutlineMailOutline className={css.formIcon} size={24} />
           <Field
             type="email"
             name="email"
@@ -90,9 +94,11 @@ const RegistrationForm = () => {
           className={css.errorMessage}
         />
 
-        <label htmlFor={passwordId}>Password</label>
+        <label htmlFor={passwordId} className={css.formLabel}>
+          Password
+        </label>
         <div className={css.InputIconContainer}>
-          <RiLockPasswordLine className={css.formIcon} size={22} />
+          <RiLockPasswordLine className={css.formIcon} size={24} />
           <Field
             type="password"
             name="password"

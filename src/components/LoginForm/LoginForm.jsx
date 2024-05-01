@@ -1,4 +1,8 @@
 import { useDispatch } from "react-redux";
+import { Button, ConfigProvider } from "antd";
+import css from "./LoginForm.module.css";
+import { MdOutlineMailOutline } from "react-icons/md";
+import { RiLockPasswordLine } from "react-icons/ri";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useId } from "react";
 import * as Yup from "yup";
@@ -8,7 +12,6 @@ import {
   MIN_PASSWORD_CHAR_VALIDATION,
 } from "../../validationValues";
 import { login } from "../../redux/auth/operations";
-// import { login } from "../../redux/auth/operations";
 
 const logInUserSchema = Yup.object().shape({
   email: Yup.string()
@@ -41,14 +44,60 @@ const LoginForm = () => {
       onSubmit={handleSubmit}
       validationSchema={logInUserSchema}
     >
-      <Form>
-        <label htmlFor={emailId}>Email</label>
-        <Field type="email" name="email" id={emailId} />
-        <ErrorMessage name="email" component="span" />
-        <label htmlFor={passwordId}>Password</label>
-        <Field type="password" name="password" id={passwordId} />
-        <ErrorMessage name="password" component="span" />
-        <button type="submit">Log in</button>
+      <Form className={css.logInForm}>
+        <label htmlFor={emailId} className={css.formLabel}>Email</label>
+        <div className={css.InputIconContainer}>
+          <MdOutlineMailOutline className={css.formIcon} size={24} />
+          <Field
+            type="email"
+            name="email"
+            id={emailId}
+            className={css.inputField}
+          />
+        </div>
+
+        <ErrorMessage
+          name="email"
+          component="span"
+          className={css.errorMessage}
+        />
+        <label htmlFor={passwordId} className={css.formLabel}>Password</label>
+        <div className={css.InputIconContainer}>
+          <RiLockPasswordLine className={css.formIcon} size={24} />
+          <Field
+            type="password"
+            name="password"
+            id={passwordId}
+            className={css.inputField}
+          />
+        </div>
+
+        <ErrorMessage
+          name="password"
+          component="span"
+          className={css.errorMessage}
+        />
+        <div className={css.logInBtnContainer}>
+          <Button
+            type="primary"
+            htmlType="reset"
+            className={css.resetBtn}
+            danger
+          >
+            Clear
+          </Button>
+          <ConfigProvider
+            theme={{
+              token: {
+                colorPrimary: "#91FF36",
+              },
+            }}
+          >
+            <Button type="primary" htmlType="submit">
+              Sign up
+            </Button>
+          </ConfigProvider>
+        </div>
       </Form>
     </Formik>
   );

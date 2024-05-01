@@ -3,24 +3,30 @@
   flex-direction: column;
   margin-top: 20px;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 40px;
   border: 5px solid silver;
   padding: 10px 20px;
   border-radius: 10px;
   box-shadow: 0px 18px 38px -5px rgba(252, 252, 252, 0.5);
 }
-label,
+.registrationForm:focus-within {
+  border-color: #8d03ff;
+}
+
+.formLabel,
 button {
   color: rgb(252, 252, 252);
 }
-label {
+.formLabel {
   margin-bottom: 5px;
   text-align: left;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in;
 }
 .registrationBtnContainer {
   display: flex;
   justify-content: space-between;
-
   margin-top: 10px;
 }
 
@@ -28,17 +34,38 @@ label {
   color: #e1341e;
 }
 .inputField {
-  padding: 3px 24px;
-
+  padding: 5px 0px 5px 30px;
+  border: none;
+  border-radius: 3px;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in;
 }
-.InputIconContainer {
 
+.inputField:hover {
+  outline: 1.5px solid #3f36ff;
+}
+.InputIconContainer:focus-within .inputField {
+  border: none;
+  box-shadow: 0px 1px 11px 5px rgba(63, 54, 255, 0.5);
+  outline: 1.5px solid #3f36ff;
+}
+
+.InputIconContainer {
   position: relative;
+  margin-bottom: 10px;
 }
 .formIcon {
   color: silver;
   position: absolute;
+  display: block;
   top: 50%;
-  transform: translateY(-50%); 
+  transform: translateY(-50%);
   left: 2px;
+  transition-property: color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in;
+}
+.InputIconContainer:focus-within .formIcon {
+  color: #3f36ff;
 }
