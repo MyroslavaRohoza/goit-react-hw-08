@@ -1,12 +1,12 @@
 import Modal from "react-modal";
-
+import css from './ModalWindow.module.css'
 const ModalWindow = ({ onDeleteContact, closeModal, modalIsOpen, contact }) => {
   return (
     <Modal
       isOpen={modalIsOpen}
       onRequestClose={closeModal}
       ariaHideApp={false}
-      // className={}
+       className={css.contentStyle}
       style={{
         overlay: {
           backgroundColor: "rgba(35, 31, 31, 0.8)",

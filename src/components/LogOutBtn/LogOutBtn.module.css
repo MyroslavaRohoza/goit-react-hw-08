@@ -6,4 +6,10 @@
   border: 1.5px solid silver;
   border-radius: 5px;
   background-color: rgb(141, 3, 255, 0.75);
+  transition-property: background-color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in;
+}
+.logOutBtn:hover, .logOutBtn:focus {
+  background-color: rgb(141, 3, 255);
 }

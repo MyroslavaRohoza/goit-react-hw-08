@@ -59,7 +59,6 @@ const LoginForm = () => {
                 className={css.inputField}
               />
             </div>
-
             <ErrorMessage
               name="email"
               component="span"
@@ -79,7 +78,6 @@ const LoginForm = () => {
                 className={css.inputField}
               />
             </div>
-
             <ErrorMessage
               name="password"
               component="span"

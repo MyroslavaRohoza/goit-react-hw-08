@@ -1,7 +1,6 @@
-import { Card, Col, ConfigProvider } from "antd";
+import { Card, ConfigProvider } from "antd";
 import { Button } from "antd";
 import css from "./Contact.module.css";
-import { FaPeopleArrows } from "react-icons/fa6";
 import { FaPhoneSquare } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { deleteContact } from "../../redux/contacts/operations";
@@ -16,7 +15,7 @@ const Contact = ({ contact }) => {
   const onDeleteContact = (contactId) => {
     dispatch(deleteContact(contactId));
     setModalIsOpen(false);
-    toast.success(<span>Your contact was successfully deleted</span>);
+    toast.success(<span>Your contact was successfully deleted.</span>);
   };
   function openModalWindow() {
     setModalIsOpen(true);
@@ -31,7 +30,7 @@ const Contact = ({ contact }) => {
           token: {
             colorTextHeading: "#3f36ff",
             fontSize: 16,
-          },
+          },  
         }}
       >
         <Card title={contact.name} bordered={false} className={css.card}>

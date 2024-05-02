@@ -22,4 +22,5 @@
 }
 .contactItem { 
   flex-basis: calc((100% - 80px) / 5);
+  max-width:  calc((100% - 80px) / 5); 
 }
