@@ -1,0 +1,9 @@
+.logOutBtn {
+  color: rgb(252, 252, 252);
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 15px;
+  border: 1.5px solid silver;
+  border-radius: 5px;
+  background-color: rgb(141, 3, 255, 0.75);
+}

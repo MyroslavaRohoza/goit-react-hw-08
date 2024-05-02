@@ -1,3 +1,5 @@
+import { Card, Col, ConfigProvider } from "antd";
+import { Button } from "antd";
 import css from "./Contact.module.css";
 import { FaPeopleArrows } from "react-icons/fa6";
 import { FaPhoneSquare } from "react-icons/fa";
@@ -24,26 +26,39 @@ const Contact = ({ contact }) => {
   }
   return (
     <li className={css.contactItem}>
-      <h2>
-        <FaPeopleArrows /> {contact.name}
-      </h2>
-      <p>
-        <FaPhoneSquare /> {contact.number}
-      </p>
-      <button
-        type="button"
-        // onClick={() => onDeleteContact(contact.id)}
-        onClick={openModalWindow}
-        className={css.delBtn}
+      <ConfigProvider
+        theme={{
+          token: {
+            colorTextHeading: "#3f36ff",
+            fontSize: 16,
+          },
+        }}
       >
-        Delete
-      </button>
+        <Col span={34}>
+          <Card title={contact.name} bordered={false} className={css.card}>
+            <div className={css.contactNumInfoContainer}>
+              <FaPhoneSquare className={css.contactNumInfo} />
+              <p className={css.contactNumInfo}>{contact.number}</p>
+            </div>
+            <Button
+              type="primary"
+              htmlType="button"
+              onClick={openModalWindow}
+              className={css.deleteBtn}
+              danger
+              ghost
+            >
+              Delete
+            </Button>
+          </Card>
+        </Col>
+      </ConfigProvider>
       {modalIsOpen && (
         <ModalWindow
           onDeleteContact={onDeleteContact}
           closeModal={closeModal}
-            modalIsOpen={modalIsOpen}
-            contact={contact}
+          modalIsOpen={modalIsOpen}
+          contact={contact}
         />
       )}
     </li>

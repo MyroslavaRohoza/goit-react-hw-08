@@ -1,5 +1,8 @@
 .ContactList {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 928px;
+  gap: 20px;
+  width: calc(100% - 80px) / 3;
+  margin: 0 auto;
 }
