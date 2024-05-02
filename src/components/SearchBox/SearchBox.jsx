@@ -1,9 +1,9 @@
-import { useDispatch, useSelector } from 'react-redux';
-import css from './SearchBox.module.css'
-import { selectNameFilter } from '../../redux/filters/selectors';
-import { changeFilter } from '../../redux/filters/slice';
-
-
+import { useDispatch, useSelector } from "react-redux";
+import { Input } from "antd";
+import css from "./SearchBox.module.css";
+import { selectNameFilter } from "../../redux/filters/selectors";
+import { changeFilter } from "../../redux/filters/slice";
+import { PiMagnifyingGlassFill } from "react-icons/pi";
 const SearchBox = () => {
   const dispatch = useDispatch();
   const filter = useSelector(selectNameFilter);
@@ -12,11 +12,16 @@ const SearchBox = () => {
   }
   return (
     <div className={css.searchContainer}>
-      <input
-        type="text"
-        className={css.searchInput}
+      <Input
+        htmlType="text"
         value={filter}
         onChange={setFilter}
+        className={css.searchInput}
+        prefix={<PiMagnifyingGlassFill 
+        className={css.searchIcon}
+        size={24}
+        />}
+        placeholder="Enter name or number..."
       />
     </div>
   );

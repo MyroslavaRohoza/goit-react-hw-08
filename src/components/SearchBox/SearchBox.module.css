@@ -1,7 +1,14 @@
 .searchContainer {
-  margin: 20px 0px;
+  margin: 20px auto;
+  width: 300px;
 }
 .searchInput {
-  padding: 5px 10px;
-  background-color: rgb(192, 192, 255);
+  padding: 8px 0px 8px 10px;
+  width: 300px;
+  border-width: 2px;
+  border-color: #3f36ff;
+}
+
+.searchIcon {
+  color: #3f36ff;
 }
