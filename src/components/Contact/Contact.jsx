@@ -34,24 +34,22 @@ const Contact = ({ contact }) => {
           },
         }}
       >
-        <Col span={34}>
-          <Card title={contact.name} bordered={false} className={css.card}>
-            <div className={css.contactNumInfoContainer}>
-              <FaPhoneSquare className={css.contactNumInfo} />
-              <p className={css.contactNumInfo}>{contact.number}</p>
-            </div>
-            <Button
-              type="primary"
-              htmlType="button"
-              onClick={openModalWindow}
-              className={css.deleteBtn}
-              danger
-              ghost
-            >
-              Delete
-            </Button>
-          </Card>
-        </Col>
+        <Card title={contact.name} bordered={false} className={css.card}>
+          <div className={css.contactNumInfoContainer}>
+            <FaPhoneSquare className={css.contactNumInfo} />
+            <p className={css.contactNumInfo}>{contact.number}</p>
+          </div>
+          <Button
+            type="primary"
+            htmlType="button"
+            onClick={openModalWindow}
+            className={css.deleteBtn}
+            danger
+            ghost
+          >
+            Delete
+          </Button>
+        </Card>
       </ConfigProvider>
       {modalIsOpen && (
         <ModalWindow

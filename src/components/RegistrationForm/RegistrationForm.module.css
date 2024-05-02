@@ -1,6 +1,7 @@
 .registrationForm {
   display: inline-flex;
   flex-direction: column;
+  background-color: transparent;
   margin-top: 20px;
   margin: 0 auto;
   margin-top: 40px;
@@ -18,7 +19,6 @@ button {
   color: rgb(252, 252, 252);
 }
 .formLabel {
-  margin-bottom: 5px;
   text-align: left;
   transition-property: all;
   transition-duration: 300ms;
@@ -27,7 +27,7 @@ button {
 .registrationBtnContainer {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .errorMessage {
@@ -53,8 +53,8 @@ button {
 
 .InputIconContainer {
   position: relative;
-  margin-bottom: 10px;
 }
+
 .formIcon {
   color: silver;
   position: absolute;
@@ -68,4 +68,14 @@ button {
 }
 .InputIconContainer:focus-within .formIcon {
   color: #3f36ff;
+}
+.inputFormWrapper, .inputContainer{
+  display: flex;
+  flex-direction: column;
+}
+.inputFormWrapper{
+  gap: 10px;
+}
+.inputContainer{
+  gap: 5px;
 }

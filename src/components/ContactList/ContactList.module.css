@@ -1,8 +1,14 @@
 .ContactList {
   display: flex;
   flex-wrap: wrap;
-  width: 928px;
+  width: 920px;
   gap: 20px;
-  width: calc(100% - 80px) / 3;
+  margin: 0 auto;
+}
+.addContactInfo {
+  color: rgb(252, 252, 252);
+  display: inline-block;
+}
+.addContactInfoItem {
   margin: 0 auto;
 }

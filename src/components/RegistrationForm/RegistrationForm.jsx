@@ -54,65 +54,65 @@ const RegistrationForm = () => {
       validationSchema={registerUserSchema}
     >
       <Form className={css.registrationForm}>
-        <label htmlFor={nameId} className={css.formLabel}>
-          Name
-        </label>
-
-        <div className={css.InputIconContainer}>
-          <RxAvatar className={css.formIcon} size={24} />
-
-          <Field
-            type="text"
-            name="name"
-            id={nameId}
-            className={css.inputField}
-          />
+        <div className={css.inputFormWrapper}>
+          <div className={css.inputContainer}>
+            <label htmlFor={nameId} className={css.formLabel}>
+              Name
+            </label>
+            <div className={css.InputIconContainer}>
+              <RxAvatar className={css.formIcon} size={24} />
+              <Field
+                type="text"
+                name="name"
+                id={nameId}
+                className={css.inputField}
+              />
+            </div>
+            <ErrorMessage
+              name="name"
+              component="span"
+              className={css.errorMessage}
+            />
+          </div>
+          <div className={css.inputContainer}>
+            <label htmlFor={emailId} className={css.formLabel}>
+              Email
+            </label>
+            <div className={css.InputIconContainer}>
+              <MdOutlineMailOutline className={css.formIcon} size={24} />
+              <Field
+                type="email"
+                name="email"
+                id={emailId}
+                className={css.inputField}
+              />
+            </div>
+            <ErrorMessage
+              name="email"
+              component="span"
+              className={css.errorMessage}
+            />
+          </div>
+          <div className={css.inputContainer}>
+            <label htmlFor={passwordId} className={css.formLabel}>
+              Password
+            </label>
+            <div className={css.InputIconContainer}>
+              <RiLockPasswordLine className={css.formIcon} size={24} />
+              <Field
+                type="password"
+                name="password"
+                id={passwordId}
+                className={css.inputField}
+              />
+            </div>
+            <ErrorMessage
+              name="password"
+              component="span"
+              className={css.errorMessage}
+            />
+          </div>
         </div>
-
-        <ErrorMessage
-          name="name"
-          component="span"
-          className={css.errorMessage}
-        />
-
-        <label htmlFor={emailId} className={css.formLabel}>
-          Email
-        </label>
-        <div className={css.InputIconContainer}>
-          <MdOutlineMailOutline className={css.formIcon} size={24} />
-          <Field
-            type="email"
-            name="email"
-            id={emailId}
-            className={css.inputField}
-          />
-        </div>
-
-        <ErrorMessage
-          name="email"
-          component="span"
-          className={css.errorMessage}
-        />
-
-        <label htmlFor={passwordId} className={css.formLabel}>
-          Password
-        </label>
-        <div className={css.InputIconContainer}>
-          <RiLockPasswordLine className={css.formIcon} size={24} />
-          <Field
-            type="password"
-            name="password"
-            id={passwordId}
-            className={css.inputField}
-          />
-        </div>
-
-        <ErrorMessage
-          name="password"
-          component="span"
-          className={css.errorMessage}
-        />
-
         <div className={css.registrationBtnContainer}>
           <Button
             type="primary"

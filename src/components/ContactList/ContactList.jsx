@@ -8,7 +8,7 @@ const ContactList = () => {
   return (
     <ul className={css.ContactList}>
       {Array.isArray(filteredContacts) && filteredContacts.length === 0 && (
-        <li>Please, add your contacts</li>
+        <li className={css.addContactInfoItem}><p className={css.addContactInfo}>Please, add your contacts</p></li>
       )}
       {Array.isArray(filteredContacts) &&
         filteredContacts.map((contact) => {

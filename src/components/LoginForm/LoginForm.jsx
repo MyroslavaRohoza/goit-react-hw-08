@@ -45,38 +45,48 @@ const LoginForm = () => {
       validationSchema={logInUserSchema}
     >
       <Form className={css.logInForm}>
-        <label htmlFor={emailId} className={css.formLabel}>Email</label>
-        <div className={css.InputIconContainer}>
-          <MdOutlineMailOutline className={css.formIcon} size={24} />
-          <Field
-            type="email"
-            name="email"
-            id={emailId}
-            className={css.inputField}
-          />
-        </div>
+        <div className={css.inputFormWrapper}>
+          <div className={css.inputContainer}>
+            <label htmlFor={emailId} className={css.formLabel}>
+              Email
+            </label>
+            <div className={css.InputIconContainer}>
+              <MdOutlineMailOutline className={css.formIcon} size={24} />
+              <Field
+                type="email"
+                name="email"
+                id={emailId}
+                className={css.inputField}
+              />
+            </div>
 
-        <ErrorMessage
-          name="email"
-          component="span"
-          className={css.errorMessage}
-        />
-        <label htmlFor={passwordId} className={css.formLabel}>Password</label>
-        <div className={css.InputIconContainer}>
-          <RiLockPasswordLine className={css.formIcon} size={24} />
-          <Field
-            type="password"
-            name="password"
-            id={passwordId}
-            className={css.inputField}
-          />
-        </div>
+            <ErrorMessage
+              name="email"
+              component="span"
+              className={css.errorMessage}
+            />
+          </div>
+          <div className={css.inputContainer}>
+            <label htmlFor={passwordId} className={css.formLabel}>
+              Password
+            </label>
+            <div className={css.InputIconContainer}>
+              <RiLockPasswordLine className={css.formIcon} size={24} />
+              <Field
+                type="password"
+                name="password"
+                id={passwordId}
+                className={css.inputField}
+              />
+            </div>
 
-        <ErrorMessage
-          name="password"
-          component="span"
-          className={css.errorMessage}
-        />
+            <ErrorMessage
+              name="password"
+              component="span"
+              className={css.errorMessage}
+            />
+          </div>
+        </div>
         <div className={css.logInBtnContainer}>
           <Button
             type="primary"

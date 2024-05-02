@@ -1,4 +1,6 @@
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
+import { Button, ConfigProvider } from "antd";
+import { TinyColor } from '@ctrl/tinycolor';
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useId } from "react";
 import * as Yup from "yup";
@@ -18,14 +20,21 @@ const FeedbackSchema = Yup.object().shape({
     .max(MAX_CHAR_VALIDATION, `Up to ${MAX_CHAR_VALIDATION} characters`)
     .required("Required!"),
 });
+const colors1 = ['#a436ff', '#3f36ff'];
+
+const getHoverColors = (colors) =>
+  colors.map((color) => new TinyColor(color).lighten(5).toString());
+const getActiveColors = (colors) =>
+  colors.map((color) => new TinyColor(color).darken(5).toString());
 const ContactForm = () => {
+  
   const dispatch = useDispatch();
   function onAddContact(formContact) {
     const finalFormContact = {
       ...formContact,
     };
     dispatch(addContact(finalFormContact));
-    toast.success(<span>Your contact was successfully added</span>);
+    toast.success(<span>Your contact was successfully added.</span>);
   }
 
   const handleSubmit = (values, actions) => {
@@ -45,33 +54,56 @@ const ContactForm = () => {
       validationSchema={FeedbackSchema}
     >
       <Form className={css.contactForm}>
-        <label htmlFor={nameId}>Name</label>
-        <Field
-          type="text"
-          name="name"
-          id={nameId}
-          className={css.contactInput}
-        />
-        <ErrorMessage
-          name="name"
-          component="span"
-          className={css.errorMessage}
-        />
-        <label htmlFor={numberId}>Number</label>
-        <Field
-          type="text"
-          name="number"
-          id={numberId}
-          className={css.contactInput}
-        />
-        <ErrorMessage
-          name="number"
-          component="span"
-          className={css.errorMessage}
-        />
-        <button type="submit" className={css.AddContactBtn}>
-          Add contact
-        </button>
+        <div className={css.inputFormWrapper}>
+          <div className={css.inputContainer}>
+            <label htmlFor={nameId} className={css.formLabel}>
+              Name
+            </label>
+            <Field
+              type="text"
+              name="name"
+              id={nameId}
+              className={css.contactInput}
+            />
+            <ErrorMessage
+              name="name"
+              component="span"
+              className={css.errorMessage}
+            />
+          </div> 
+          <div className={css.inputContainer}>
+            <label htmlFor={nameId} className={css.formLabel}>
+              Number
+            </label>
+            <Field
+              type="text"
+              name="number"
+              id={numberId}
+              className={css.contactInput}
+            />
+            <ErrorMessage
+              name="number"
+              component="span"
+              className={css.errorMessage}
+            />
+          </div>
+        </div>
+        <ConfigProvider
+      theme={{
+        components: {
+          Button: {
+            colorPrimary: `linear-gradient(135deg, ${colors1.join(', ')})`,
+            colorPrimaryHover: `linear-gradient(135deg, ${getHoverColors(colors1).join(', ')})`,
+            colorPrimaryActive: `linear-gradient(135deg, ${getActiveColors(colors1).join(', ')})`,
+            lineWidth: 0,
+          },
+        },
+      }}
+    >
+      <Button type="primary" htmlType="submit" className={css.addContactBtn}>
+       Add contact
+      </Button>
+    </ConfigProvider>
       </Form>
     </Formik>
   );

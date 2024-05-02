@@ -3,6 +3,7 @@
   transition-property: box-shadow;
   transition-duration: 300ms;
   transition-timing-function: ease-in;
+  width: 100%;
 }
 .card:hover {
   box-shadow: 0 1px 2px 0 rgb(252, 252, 252), 0 1px 6px -1px rgb(252, 252, 252),
@@ -18,4 +19,7 @@
 }
 .deleteBtn {
   margin-top: 15px;
+}
+.contactItem { 
+  flex-basis: calc((100% - 80px) / 5);
 }
