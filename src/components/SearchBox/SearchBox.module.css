@@ -4,9 +4,10 @@
 }
 .searchInput {
   padding: 8px 0px 8px 10px;
-  width: 300px;
+  width: 280px;
   border-width: 2px;
   border-color: #3f36ff;
+ 
 }
 
 .searchIcon {

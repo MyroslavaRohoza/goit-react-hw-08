@@ -2,10 +2,20 @@
   color: rgb(252, 252, 252);
   display: inline-flex;
   align-items: center;
-  padding: 10px 15px;
   border: 1.5px solid silver;
   border-radius: 5px;
   box-shadow: -2px 3px 20px 2px rgba(255, 255, 255, 0.7);
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .link{
+    padding: 5px 10px; 
+  }
+}
+
+@media (min-width: 768px) {
+  .link{
+    padding: 0 15px
+  }
 }
 .active {
   background-color: rgb(252, 252, 252);
@@ -13,9 +23,10 @@
 }
 .headerNav {
   display: flex;
+  /* gap: 10px; */
   justify-content: space-between;
 }
-.authContainer {
+/* .authContainer {
   display: flex;
   gap: 30px;
-}
+} */

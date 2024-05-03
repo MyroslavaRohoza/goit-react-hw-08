@@ -14,7 +14,7 @@ const ModalWindow = ({ onDeleteContact, closeModal, modalIsOpen, contact }) => {
         },
       }}
     >
-      <div className={css.modacontantContainer}>
+      <div className={css.modalContantContainer}>
         <p className={css.modalText}>
           You definitely want to delete contact <span className={css.contactNameAccent}>{contact.name}</span>?        
         </p>

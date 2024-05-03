@@ -1,5 +1,28 @@
-.userMenuInfo{
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.userMenuInfo {
+  display: flex;
+  gap: 5px;
 }
+.userMenuContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .link {
+    padding: 5px 10px;
+  }
+  .userMenuContainer {
+    align-items: center;
+  }
+  .userMenuContainer,
+  .userMenuInfo {
+    gap: 5px;
+  }
+}
+@media (min-width: 768px) {
+    .userMenuContainer,
+    .userMenuInfo {
+      gap: 15px;
+    }
+  }
+  

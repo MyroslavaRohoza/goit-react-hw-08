@@ -16,13 +16,31 @@
   display: flex;
   align-items: center;
   gap: 4px;
+  display: flex;
+  justify-content: center;
 }
 .deleteBtn {
   margin-top: 15px;
 }
-.contactItem {
-  width: calc((100% - 80px)/5);
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .contactItem {
+    width: calc((100% - 20px) / 2);
+  }
 }
+
+@media (min-width: 768px) and (max-width: 1127px) {
+  .contactItem {
+    width: calc((100% - 30px) / 3);
+  }
+}
+
+@media (min-width: 1128px){
+  .contactItem {
+    width: calc((100% - 45px) / 4);
+  }
+}
+
 .contactNumInfo {
   overflow: hidden;
   text-overflow: ellipsis;

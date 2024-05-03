@@ -13,3 +13,9 @@
 .logOutBtn:hover, .logOutBtn:focus {
   background-color: rgb(141, 3, 255);
 }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .logOutBtn{
+    padding: 8px 10px; 
+  }
+}

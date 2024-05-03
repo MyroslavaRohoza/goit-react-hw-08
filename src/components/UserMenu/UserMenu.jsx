@@ -14,16 +14,15 @@ const UserMenu = ({ buildLinkClass }) => {
 
   const userName = useSelector(selectUserName);
   return (
-    <>
+    <div className={css.userMenuContainer}>
+      <p className={css.userName}>Welcome, {userName}</p>
       <div className={css.userMenuInfo}>
-        <p>Welcome, {userName}</p>
-     
-      <NavLink to="/contacts" className={buildLinkClass}>
-        Contacts
-      </NavLink>
- </div>
-      <LogOutBtn onBtnClick={onBtnClick} />
-    </>
+        <NavLink to="/contacts" className={buildLinkClass}>
+          Contacts
+        </NavLink>
+        <LogOutBtn onBtnClick={onBtnClick} />
+      </div>
+    </div>
   );
 };
 

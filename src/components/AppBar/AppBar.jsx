@@ -16,6 +16,7 @@ const AppBar = () => {
   return (
     <Suspense fallback={<Loader />}>
       <nav className={css.headerNav}>
+       
         <Navigation buildLinkClass={buildLinkClass} />
         <div className={css.authContainer}>
           {isLoggedIn ? (
