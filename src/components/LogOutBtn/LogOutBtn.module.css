@@ -2,7 +2,6 @@
   color: rgb(252, 252, 252);
   display: inline-flex;
   align-items: center;
-  padding: 10px 15px;
   border: 1.5px solid silver;
   border-radius: 5px;
   background-color: rgb(141, 3, 255, 0.75);
@@ -17,5 +16,11 @@
 @media (min-width: 320px) and (max-width: 767px) {
   .logOutBtn{
     padding: 8px 10px; 
+  }
+}
+
+@media (min-width: 768px){
+  .logOutBtn{
+    padding: 10px 15px;
   }
 }

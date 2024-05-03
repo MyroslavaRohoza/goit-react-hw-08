@@ -14,7 +14,7 @@
 
 @media (min-width: 768px) {
   .link{
-    padding: 0 15px
+    padding: 10px 15px
   }
 }
 .active {
@@ -23,10 +23,5 @@
 }
 .headerNav {
   display: flex;
-  /* gap: 10px; */
   justify-content: space-between;
 }
-/* .authContainer {
-  display: flex;
-  gap: 30px;
-} */
