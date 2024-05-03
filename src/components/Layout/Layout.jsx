@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
       <header className={css.header}>
         <AppBar />
       </header>
-      <main>{children}</main>
+      <main className={css.main}>{children}</main>
     </>
   );
 };

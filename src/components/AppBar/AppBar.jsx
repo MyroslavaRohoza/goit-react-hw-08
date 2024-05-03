@@ -1,11 +1,12 @@
 import { useSelector } from "react-redux";
+import { lazy, Suspense } from "react";
 import css from "./AppBar.module.css";
-import AuthNav from "../AuthNav/AuthNav";
-import Navigation from "../Navigation/Navigation";
+const AuthNav = lazy(() => import("../AuthNav/AuthNav"));
+const Navigation = lazy(() => import("../Navigation/Navigation"));
+const UserMenu = lazy(() => import("../UserMenu/UserMenu"));
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
-import UserMenu from "../UserMenu/UserMenu";
 import clsx from "clsx";
-
+import Loader from "../Loader/Loader";
 
 const AppBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -13,12 +14,19 @@ const AppBar = () => {
     return clsx(css.link, isActive && css.active);
   };
   return (
-    <nav className={css.headerNav}>
-      <Navigation buildLinkClass={buildLinkClass}/>
-      <div className={css.authContainer}>{isLoggedIn ? <UserMenu buildLinkClass={buildLinkClass}/> : <AuthNav buildLinkClass={buildLinkClass}/>}</div>
-    </nav>
+    <Suspense fallback={<Loader />}>
+      <nav className={css.headerNav}>
+        <Navigation buildLinkClass={buildLinkClass} />
+        <div className={css.authContainer}>
+          {isLoggedIn ? (
+            <UserMenu buildLinkClass={buildLinkClass} />
+          ) : (
+            <AuthNav buildLinkClass={buildLinkClass} />
+          )}
+        </div>
+      </nav>
+    </Suspense>
   );
 };
 
 export default AppBar;
-

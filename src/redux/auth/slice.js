@@ -42,7 +42,9 @@ const authSlice = createSlice({
         state.user.name = action.payload.name;
         state.user.email = action.payload.email;
       })
-
+      .addCase(refreshUser.rejected, (state) => {
+        state.isRefreshing = false;
+      })
       .addCase(logout.fulfilled, () => {
         return initialState;
       }),

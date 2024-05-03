@@ -20,7 +20,10 @@
 .deleteBtn {
   margin-top: 15px;
 }
-.contactItem { 
-  flex-basis: calc((100% - 80px) / 5);
-  max-width:  calc((100% - 80px) / 5); 
+.contactItem {
+  width: calc((100% - 80px)/5);
+}
+.contactNumInfo {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
