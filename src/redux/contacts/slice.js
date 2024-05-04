@@ -1,7 +1,12 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit";
 
 import { initialState } from "../initialState";
-import { addContact, deleteContact, fetchContacts, updateContact } from "./operations";
+import {
+  addContact,
+  deleteContact,
+  fetchContacts,
+  updateContact,
+} from "./operations";
 import { selectNameFilter } from "../filters/selectors";
 
 const contactsSlice = createSlice({
@@ -62,7 +67,7 @@ const contactsSlice = createSlice({
       .addCase(updateContact.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
-      })
+      });
   },
 });
 

@@ -35,7 +35,7 @@
   }
 }
 
-@media (min-width: 1128px){
+@media (min-width: 1128px) {
   .contactItem {
     width: calc((100% - 45px) / 4);
   }
@@ -45,8 +45,18 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.cardBtnContainer{
+.cardBtnContainer {
   display: flex;
   width: 100%;
-  justify-content: space-between;
+}
+@media (min-width: 450px) {
+  .cardBtnContainer {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 450px) {
+  .cardBtnContainer {
+   flex-direction: column;
+  }
 }

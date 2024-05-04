@@ -5,7 +5,6 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { MAX_CHAR_VALIDATION } from "../../components/../validationValues.js";
 import { MIN_CHAR_VALIDATION } from "../../components/../validationValues.js";
-
 import { useId } from "react";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
@@ -72,7 +71,6 @@ const ModalWindowCard = ({
                     name="name"
                     id={nameId}
                     className={css.contactInput + " " + css.contactInputName}
-                    //   value={contact.name}
                   />
                   <ErrorMessage
                     name="name"
@@ -80,7 +78,6 @@ const ModalWindowCard = ({
                     className={css.errorMessage}
                   />
                 </div>
-
                 <div className={css.inputContainer}>
                   <label htmlFor={nameId} className={css.formLabelNumber}>
                     Number
@@ -90,7 +87,6 @@ const ModalWindowCard = ({
                     name="number"
                     id={numberId}
                     className={css.contactInput + " " + css.contactInputNumber}
-                    //   value={contact.number}
                   />
                   <ErrorMessage
                     name="number"
@@ -107,7 +103,13 @@ const ModalWindowCard = ({
                     },
                   }}
                 >
-                  <Button type="primary" htmlType="button" danger onClick={closeModal} size="large">
+                  <Button
+                    type="primary"
+                    htmlType="button"
+                    danger
+                    onClick={closeModal}
+                    size="large"
+                  >
                     Exit
                   </Button>
                   <Button type="primary" htmlType="submit" size="large">
