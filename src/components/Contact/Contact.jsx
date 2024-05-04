@@ -7,9 +7,11 @@ import { deleteContact } from "../../redux/contacts/operations";
 import toast from "react-hot-toast";
 import ModalWindow from "../ModalWindow/ModalWindow";
 import { useState } from "react";
+import ModalWindowCard from "../ModalWindowCard/ModalWindowCard";
 
 const Contact = ({ contact }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalType, setModalType] = useState(null);
 
   const dispatch = useDispatch();
   const onDeleteContact = (contactId) => {
@@ -17,12 +19,14 @@ const Contact = ({ contact }) => {
     setModalIsOpen(false);
     toast.success(<span>Your contact was successfully deleted.</span>);
   };
-  function openModalWindow() {
+  function openModalWindow(modalType) {
     setModalIsOpen(true);
+    setModalType(modalType);
   }
   function closeModal() {
     setModalIsOpen(false);
   }
+
   return (
     <li className={css.contactItem}>
       <ConfigProvider
@@ -30,7 +34,7 @@ const Contact = ({ contact }) => {
           token: {
             colorTextHeading: "#3f36ff",
             fontSize: 16,
-          },  
+          },
         }}
       >
         <Card title={contact.name} bordered={false} className={css.card}>
@@ -38,21 +42,38 @@ const Contact = ({ contact }) => {
             <FaPhoneSquare className={css.contactNumInfo} />
             <p className={css.contactNumInfo}>{contact.number}</p>
           </div>
+          <div className={css.cardBtnContainer}>
           <Button
             type="primary"
             htmlType="button"
-            onClick={openModalWindow}
+            onClick={() => openModalWindow("delete")}
             className={css.deleteBtn}
             danger
             ghost
           >
             Delete
           </Button>
+          <Button
+            type="primary"
+            htmlType="button"
+            onClick={() => openModalWindow("edit")}
+            className={css.deleteBtn}
+            ghost
+          >
+            Edit
+          </Button></div>
         </Card>
       </ConfigProvider>
-      {modalIsOpen && (
+      {modalIsOpen && modalType === "delete" && (
         <ModalWindow
           onDeleteContact={onDeleteContact}
+          closeModal={closeModal}
+          modalIsOpen={modalIsOpen}
+          contact={contact}
+        />
+      )}
+      {modalIsOpen && modalType === "edit" && (
+        <ModalWindowCard
           closeModal={closeModal}
           modalIsOpen={modalIsOpen}
           contact={contact}

@@ -45,3 +45,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.cardBtnContainer{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}

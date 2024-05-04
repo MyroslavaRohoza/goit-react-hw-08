@@ -1,0 +1,98 @@
+.contentStyle {
+  background-color: rgb(252, 252, 252);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  border: 3px solid #8d03ff;
+  border-radius: 10px;
+  padding: 25px 30px;
+}
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .contentStyle {
+    width: 75vw;
+    height: 40vh;
+  }
+}
+@media (min-width: 768px) {
+  .contentStyle {
+    width: 30vw;
+    height: 45vh;
+  }
+}
+.contactNameAccent {
+  color: #3f36ff;
+}
+.inputContainer {
+  display: flex;
+  gap: 5px;
+}
+
+.formLabelName {
+  color: #3f36ff;
+}
+.contactInputName {
+  outline: 1.5px solid #3f36ff;
+}
+.formLabelNumber {
+  color: #8d03ff;
+}
+.contactInput {
+  padding: 5px 0px 5px 10px;
+  border: none;
+  border-radius: 3px;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in;
+}
+.contactInputNumber {
+  outline: 1.5px solid #8d03ff;
+}
+
+.updateContactForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  gap: 10px;
+}
+.modalBtnContainer {
+  display: flex;
+}
+.inputFormWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+.modalUpdateContact {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.updateContactForm {
+  flex: 1;
+}
+
+.modalBtnContainer {
+  margin-top: auto;
+}
+.inputInfoContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.modalBtnContainer{
+  display: flex;
+  justify-content: space-between;
+}
