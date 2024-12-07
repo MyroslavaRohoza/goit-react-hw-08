@@ -2,11 +2,20 @@
   color: rgb(252, 252, 252);
   display: inline-flex;
   align-items: center;
-  border: 1.5px solid silver;
+  border: 1.5px solid rgb(0, 0, 0);
   border-radius: 5px;
-  box-shadow: -2px 3px 20px 2px rgba(255, 255, 255, 0.7);
+  border: 0;
+  transition-property: background-color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in;
+  padding: 0 10px;
 }
-@media (min-width: 320px) and (max-width: 767px) {
+
+.link:hover,
+.link:focus {
+  color: rgb(252, 252, 252);
+}
+/* @media (min-width: 320px) and (max-width: 767px) {
   .link{
     padding: 5px 10px; 
   }
@@ -16,11 +25,11 @@
   .link{
     padding: 10px 15px
   }
-}
+} */
 .active {
-  background-color: rgb(252, 252, 252);
-  color: #a436ff;
-}
+  background-color: #203175;
+  color: #ffffff;
+} /* */
 .headerNav {
   display: flex;
   justify-content: space-between;

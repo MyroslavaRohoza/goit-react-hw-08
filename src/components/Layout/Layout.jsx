@@ -4,9 +4,7 @@ import AppBar from "../AppBar/AppBar";
 const Layout = ({ children }) => {
   return (
     <>
-      <header className={css.header}>
-        <AppBar />
-      </header>
+      <AppBar />
       <main className={css.main}>{children}</main>
     </>
   );
