@@ -1,19 +1,3 @@
-.logInForm {
-  display: inline-flex;
-  background-color: transparent;
-  flex-direction: column;
-  margin-top: 20px;
-  margin: 0 auto;
-  margin-top: 40px;
-  border: 5px solid silver;
-  padding: 15px 20px;
-  border-radius: 10px;
-  box-shadow: 0px 18px 38px -5px rgba(252, 252, 252, 0.5);
-}
-.logInForm:focus-within {
-  border-color: #3f36ff;
-}
-
 .formLabel,
 button {
   color: rgb(252, 252, 252);
@@ -44,12 +28,7 @@ button {
 }
 
 .inputField:hover {
-  outline: 1.5px solid #203175;
-}
-.InputIconContainer:focus-within .inputField {
-  border: none;
-  box-shadow: 0px 1px 11px 5px rgb(141, 3, 255, 0.5);
-  outline: 1.5px solid #203175;
+  outline: 1px solid #203175;
 }
 
 .InputIconContainer {
@@ -74,9 +53,10 @@ button {
 .inputContainer {
   display: flex;
   flex-direction: column;
+  height: auto;
 }
 .inputFormWrapper {
-  gap: 10px;
+  gap: 25px;
 }
 .inputContainer {
   gap: 5px;

@@ -44,19 +44,19 @@ const LoginForm = () => {
       onSubmit={handleSubmit}
       validationSchema={logInUserSchema}
     >
-      <Form className={css.logInForm}>
+      <Form className={'form'}>
         <div className={css.inputFormWrapper}>
           <div className={css.inputContainer}>
             <label htmlFor={emailId} className={css.formLabel}>
               Email
             </label>
-            <div className={css.InputIconContainer}>
+            <div className={'InputIconContainer'}>
               <MdOutlineMailOutline className={css.formIcon} size={24} />
               <Field
                 type="email"
                 name="email"
                 id={emailId}
-                className={css.inputField}
+                className={'inputField'}
               />
             </div>
             <ErrorMessage
@@ -69,13 +69,13 @@ const LoginForm = () => {
             <label htmlFor={passwordId} className={css.formLabel}>
               Password
             </label>
-            <div className={css.InputIconContainer}>
+            <div className={'InputIconContainer'}>
               <RiLockPasswordLine className={css.formIcon} size={24} />
               <Field
                 type="password"
                 name="password"
                 id={passwordId}
-                className={css.inputField}
+                className={'inputField'}
               />
             </div>
             <ErrorMessage

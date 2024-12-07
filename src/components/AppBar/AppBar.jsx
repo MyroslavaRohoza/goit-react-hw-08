@@ -15,7 +15,7 @@ const AppBar = () => {
     return clsx(css.link, isActive && css.active);
   };
   return (
-    <Header style={{ backgroundColor: "#263ea0", color: "#fff" }}>
+    <Header style={{ backgroundColor: "#203175", color: "#fff" }}>
       <nav className={css.headerNav}>
         <Navigation buildLinkClass={buildLinkClass} />
         <div className={css.authContainer}>
