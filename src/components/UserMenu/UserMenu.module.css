@@ -2,6 +2,9 @@
   display: flex;
   gap: 5px;
 }
+.userMenu{
+  color: rgb(252, 252, 252);
+}
 .userMenuContainer {
   display: flex;
   align-items: center;

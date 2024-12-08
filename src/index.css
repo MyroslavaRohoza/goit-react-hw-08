@@ -52,12 +52,16 @@ h3,
 h4,
 h5,
 h6 {
-  color: rgb(251, 251, 251);
-  text-shadow: 4px 2px 3px rgba(164, 54, 255, 0.75);
+  color:#3f36ff;
+  text-shadow: 3px 2px 3px #203175;
 }
-h1 {
+
+h1{
+  font-size: 60px;
   margin-top: 20px;
 }
+
 p {
-  color: rgb(252, 252, 252);
+  color:  rgb(10, 4, 4);
+  font-weight: 500;
 }

@@ -2,15 +2,15 @@
   color: rgb(252, 252, 252);
   display: inline-flex;
   align-items: center;
-  border: 1.5px solid silver;
-  border-radius: 5px;
-  background-color: rgb(141, 3, 255, 0.75);
+  border: none;
+  background-color: inherit;
   transition-property: background-color;
   transition-duration: 300ms;
   transition-timing-function: ease-in;
 }
 .logOutBtn:hover, .logOutBtn:focus {
-  background-color: rgb(141, 3, 255);
+  background-color: #263ea0;
+  border-radius: 3px;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {

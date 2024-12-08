@@ -3,7 +3,13 @@
   margin-top: 15px;
   font-size: 24px;
 }
+
 .pageInfo {
   display: inline-flex;
+  align-items: center;
   gap: 5px;
+}
+
+.phoneIcon {
+  color: #263ea0;
 }

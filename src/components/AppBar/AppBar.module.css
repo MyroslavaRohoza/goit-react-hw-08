@@ -15,6 +15,10 @@
 .link:focus {
   color: rgb(252, 252, 252);
 }
+.link:hover, .link:focus {
+  background-color: #263ea0;
+  border-radius: 3px;
+}
 /* @media (min-width: 320px) and (max-width: 767px) {
   .link{
     padding: 5px 10px; 
@@ -29,7 +33,7 @@
 .active {
   background-color: #263ea0;
   color: #ffffff;
-} /* */
+} 
 .headerNav {
   display: flex;
   justify-content: space-between;

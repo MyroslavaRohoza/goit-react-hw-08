@@ -51,7 +51,7 @@ const LoginForm = () => {
               Email
             </label>
             <div className={'InputIconContainer'}>
-              <MdOutlineMailOutline className={css.formIcon} size={24} />
+              <MdOutlineMailOutline className={`formIcon`} size={26} />
               <Field
                 type="email"
                 name="email"
@@ -66,11 +66,11 @@ const LoginForm = () => {
             />
           </div>
           <div className={css.inputContainer}>
-            <label htmlFor={passwordId} className={css.formLabel}>
+            <label htmlFor={passwordId}>
               Password
             </label>
             <div className={'InputIconContainer'}>
-              <RiLockPasswordLine className={css.formIcon} size={24} />
+              <RiLockPasswordLine className={`formIcon`} size={26} />
               <Field
                 type="password"
                 name="password"
@@ -89,6 +89,7 @@ const LoginForm = () => {
           <Button
             type="primary"
             htmlType="reset"
+            size="large"
             className={css.resetBtn}
             danger
           >
@@ -101,7 +102,7 @@ const LoginForm = () => {
               },
             }}
           >
-            <Button type="primary" htmlType="submit">
+            <Button type="primary" htmlType="submit" size="large">
               Sign up
             </Button>
           </ConfigProvider>

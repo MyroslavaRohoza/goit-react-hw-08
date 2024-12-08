@@ -8,7 +8,7 @@ const HomePage = () => {
       <p className={css.homePageContent}>
         <span className={css.pageInfo}>
           This app was created to save your contacts.
-          <MdOutlineContactPhone size={36} />
+          <MdOutlineContactPhone size={52} className={css.phoneIcon} />
         </span>
         <br />
         Sign up or log in and try.

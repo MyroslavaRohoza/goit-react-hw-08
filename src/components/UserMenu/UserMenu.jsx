@@ -15,7 +15,7 @@ const UserMenu = ({ buildLinkClass }) => {
   const userName = useSelector(selectUserName);
   return (
     <div className={css.userMenuContainer}>
-      <p className={css.userName}>Welcome, {userName}</p>
+      <span className={css.userName}>Welcome, {userName}</span>
       <div className={css.userMenuInfo}>
         <NavLink to="/contacts" className={buildLinkClass}>
           Contacts

@@ -23,7 +23,7 @@ form:focus-within {
 }
 
 .inputField {
-  padding: 18px 0px 18px 30px;
+  padding: 15px 0px 18px 40px;
   border: none;
   border-radius: 3px;
   transition-property: all;
@@ -40,4 +40,36 @@ form:focus-within {
   border: none;
   box-shadow: 0px 1px 4px 3px rgba(47, 84, 235, 0.5);
   outline: 1.5px solid #203175;
+}
+
+.formIcon {
+  color: silver;
+  position: absolute;
+  display: block;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 8px;
+  transition-property: color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in;
+}
+.InputIconContainer:focus-within .formIcon {
+  color: #3f36ff;
+}
+
+.InputIconContainer {
+  position: relative;
+}
+
+button {
+  color: rgb(252, 252, 252);
+}
+
+.form label {
+  margin-bottom: 7px;
+  text-align: left;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in;
+  color: rgb(3, 0, 11);
 }
