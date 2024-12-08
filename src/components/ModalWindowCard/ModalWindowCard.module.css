@@ -6,7 +6,7 @@
   right: auto;
   bottom: auto;
   transform: translate(-50%, -50%);
-  border: 3px solid #8d03ff;
+  border: 2px solid #203175;
   border-radius: 10px;
   padding: 25px 30px;
 }
@@ -24,7 +24,7 @@
 @media (min-width: 768px) {
   .contentStyle {
     width: 30vw;
-    height: 45vh;
+    height: 42vh;
   }
 }
 .contactNameAccent {
@@ -32,28 +32,28 @@
 }
 .inputContainer {
   display: flex;
-  gap: 5px;
+  gap: 8px;
 }
 
 .formLabelName {
-  color: #3f36ff;
+  color: rgb(3, 0, 11);
 }
 .contactInputName {
   outline: 1.5px solid #3f36ff;
 }
 .formLabelNumber {
-  color: #8d03ff;
+  color: rgb(3, 0, 11);
 }
 .contactInput {
-  padding: 5px 0px 5px 10px;
+  padding: 10px 0px 10px 10px;
   border: none;
-  border-radius: 3px;
+  border-radius: 2px;
   transition-property: all;
   transition-duration: 300ms;
   transition-timing-function: ease-in;
 }
 .contactInputNumber {
-  outline: 1.5px solid #8d03ff;
+  outline: 1.5px solid #3f36ff;
 }
 
 .updateContactForm {
@@ -87,12 +87,12 @@
 .modalBtnContainer {
   margin-top: auto;
 }
-.inputInfoContainer{
+.inputInfoContainer {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
-.modalBtnContainer{
+.modalBtnContainer {
   display: flex;
   justify-content: space-between;
 }

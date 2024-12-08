@@ -109,10 +109,11 @@ const ModalWindowCard = ({
                     danger
                     onClick={closeModal}
                     size="large"
+                    ghost
                   >
                     Exit
                   </Button>
-                  <Button type="primary" htmlType="submit" size="large">
+                  <Button type="primary" htmlType="submit" size="large" ghost>
                     Save
                   </Button>
                 </ConfigProvider>

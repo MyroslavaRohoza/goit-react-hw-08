@@ -16,17 +16,19 @@ const ModalWindow = ({ onDeleteContact, closeModal, modalIsOpen, contact }) => {
     >
       <div className={css.modalContantContainer}>
         <p className={css.modalText}>
-          You definitely want to delete contact <span className={css.contactNameAccent}>{contact.name}</span>?        
+          You definitely want to delete contact{" "}
+          <span className={css.contactNameAccent}>{contact.name}</span>?
         </p>
         <div className={css.modalBtnContainer}>
-      <Button
+          <Button
             type="primary"
             htmlType="button"
             onClick={() => onDeleteContact(contact.id)}
             size="large"
+            ghost
             danger
           >
-          Yes
+            Yes
           </Button>
           <ConfigProvider
             theme={{
@@ -35,12 +37,18 @@ const ModalWindow = ({ onDeleteContact, closeModal, modalIsOpen, contact }) => {
               },
             }}
           >
-            <Button type="primary" htmlType="button" onClick={closeModal} size="large">
-           No
+            <Button
+              type="primary"
+              htmlType="button"
+              onClick={closeModal}
+              size="large"
+              ghost
+            >
+              No
             </Button>
           </ConfigProvider>
-          </div>
-          </div>
+        </div>
+      </div>
     </Modal>
   );
 };
