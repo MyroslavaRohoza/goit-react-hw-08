@@ -1,14 +1,3 @@
-.contactForm {
-  display: inline-flex;
-  border: 2px solid #8d03ff;
-  background-color: transparent;
-  flex-direction: column;
-  padding: 15px 20px;
-  color: #fff;
-  border-radius: 10px;
-  margin-top: 20px;
-}
-
 .AddContactBtn {
   margin-top: 20px;
 }
@@ -21,8 +10,9 @@
 .contactInput {
   padding: 5px 0px 5px 8px;
   border: none;
-  border-radius: 3px;
-  transition-property: outline-color;
+  padding: 13px 0px 13px 8px;
+  border-radius: 6px;
+  transition-property: all;
   transition-duration: 300ms;
   transition-timing-function: ease-in;
 }
@@ -38,14 +28,14 @@
   gap: 5px;
 }
 .contactInput:hover {
-  outline: 1.5px solid #3f36ff;
+  outline: 1px solid #3f36ff;
 }
 .inputContainer:focus-within .contactInput {
   border: none;
-  box-shadow: 0px 1px 11px 5px rgba(63, 54, 255, 0.5);
+  box-shadow: 1px 1px 3px 3px rgba(47, 84, 235, 0.5);
   outline: 1px solid #3f36ff;
 }
 
-.addContactBtn{
+.addContactBtn {
   margin-top: 20px;
 }

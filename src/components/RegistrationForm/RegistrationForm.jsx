@@ -119,7 +119,7 @@ const RegistrationForm = () => {
             htmlType="reset"
             size="large"
             className={css.resetBtn}
-            danger
+            ghost
           >
             Clear
           </Button>
@@ -130,7 +130,7 @@ const RegistrationForm = () => {
               },
             }}
           >
-            <Button type="primary" htmlType="submit" size="large">
+            <Button type="primary" htmlType="submit" size="large" ghost>
               Sign up
             </Button>
           </ConfigProvider>

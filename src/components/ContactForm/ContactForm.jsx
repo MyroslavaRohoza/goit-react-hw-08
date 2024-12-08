@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { Button, ConfigProvider } from "antd";
-import { TinyColor } from '@ctrl/tinycolor';
+import { TinyColor } from "@ctrl/tinycolor";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useId } from "react";
 import * as Yup from "yup";
@@ -20,14 +20,13 @@ const FeedbackSchema = Yup.object().shape({
     .max(MAX_CHAR_VALIDATION, `Up to ${MAX_CHAR_VALIDATION} characters`)
     .required("Required!"),
 });
-const colors1 = ['#a436ff', '#3f36ff'];
+const colors1 = ["#a436ff", "#3f36ff"];
 
 const getHoverColors = (colors) =>
   colors.map((color) => new TinyColor(color).lighten(5).toString());
 const getActiveColors = (colors) =>
   colors.map((color) => new TinyColor(color).darken(5).toString());
 const ContactForm = () => {
-  
   const dispatch = useDispatch();
   function onAddContact(formContact) {
     const finalFormContact = {
@@ -53,7 +52,7 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
       validationSchema={FeedbackSchema}
     >
-      <Form className={css.contactForm}>
+      <Form className={"form"}>
         <div className={css.inputFormWrapper}>
           <div className={css.inputContainer}>
             <label htmlFor={nameId} className={css.formLabel}>
@@ -70,7 +69,7 @@ const ContactForm = () => {
               component="span"
               className={css.errorMessage}
             />
-          </div> 
+          </div>
           <div className={css.inputContainer}>
             <label htmlFor={nameId} className={css.formLabel}>
               Number
@@ -89,21 +88,29 @@ const ContactForm = () => {
           </div>
         </div>
         <ConfigProvider
-      theme={{
-        components: {
-          Button: {
-            colorPrimary: `linear-gradient(135deg, ${colors1.join(', ')})`,
-            colorPrimaryHover: `linear-gradient(135deg, ${getHoverColors(colors1).join(', ')})`,
-            colorPrimaryActive: `linear-gradient(135deg, ${getActiveColors(colors1).join(', ')})`,
-            lineWidth: 0,
-          },
-        },
-      }}
-    >
-      <Button type="primary" htmlType="submit" className={css.addContactBtn}>
-       Add contact
-      </Button>
-    </ConfigProvider>
+          theme={{
+            components: {
+              Button: {
+                colorPrimary: `linear-gradient(135deg, ${colors1.join(", ")})`,
+                colorPrimaryHover: `linear-gradient(135deg, ${getHoverColors(
+                  colors1
+                ).join(", ")})`,
+                colorPrimaryActive: `linear-gradient(135deg, ${getActiveColors(
+                  colors1
+                ).join(", ")})`,
+                lineWidth: 0,
+              },
+            },
+          }}
+        >
+          <Button
+            type="primary"
+            htmlType="submit"
+            className={css.addContactBtn}
+          >
+            Add contact
+          </Button>
+        </ConfigProvider>
       </Form>
     </Formik>
   );
