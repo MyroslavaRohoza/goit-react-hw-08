@@ -13,9 +13,6 @@ button {
   margin-top: 20px;
 }
 
-.errorMessage {
-  color: #e1341e;
-}
 .inputField {
   padding: 5px 0px 5px 30px;
   border: none;
@@ -52,13 +49,14 @@ button {
 .InputIconContainer:focus-within .formIcon {
   color: #3f36ff;
 }
-.inputFormWrapper, .inputContainer{
+.inputFormWrapper,
+.inputContainer {
   display: flex;
   flex-direction: column;
 }
-.inputFormWrapper{
+.inputFormWrapper {
   gap: 10px;
 }
-.inputContainer{
+.inputContainer {
   gap: 5px;
 }

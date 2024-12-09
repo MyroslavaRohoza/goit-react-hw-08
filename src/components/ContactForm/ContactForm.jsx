@@ -67,7 +67,7 @@ const ContactForm = () => {
             <ErrorMessage
               name="name"
               component="span"
-              className={css.errorMessage}
+              className={'errorMessage'}
             />
           </div>
           <div className={css.inputContainer}>
@@ -83,7 +83,7 @@ const ContactForm = () => {
             <ErrorMessage
               name="number"
               component="span"
-              className={css.errorMessage}
+              className={'errorMessage'}
             />
           </div>
         </div>

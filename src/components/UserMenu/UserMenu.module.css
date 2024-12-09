@@ -1,6 +1,7 @@
 .userMenuInfo {
   display: flex;
   gap: 5px;
+  height: 100%;
 }
 .userMenu{
   color: rgb(252, 252, 252);
@@ -8,6 +9,7 @@
 .userMenuContainer {
   display: flex;
   align-items: center;
+  height: 100%;
   gap: 5px;
 }
 @media (min-width: 320px) and (max-width: 767px) {

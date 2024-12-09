@@ -6,7 +6,6 @@ import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import clsx from "clsx";
 import AuthNav from "../AuthNav/AuthNav";
 import { Header } from "antd/es/layout/layout";
-import { Menu } from "antd";
 
 const AppBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -15,7 +14,10 @@ const AppBar = () => {
     return clsx(css.link, isActive && css.active);
   };
   return (
-    <Header style={{ backgroundColor: "#203175", color: "#fff" }}>
+    <Header
+      style={{ backgroundColor: "#203175", color: "#fff" }}
+      className={css.header}
+    >
       <nav className={css.headerNav}>
         <Navigation buildLinkClass={buildLinkClass} />
         <div className={css.authContainer}>

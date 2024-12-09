@@ -44,44 +44,42 @@ const LoginForm = () => {
       onSubmit={handleSubmit}
       validationSchema={logInUserSchema}
     >
-      <Form className={'form'}>
+      <Form className={"form"}>
         <div className={css.inputFormWrapper}>
           <div className={css.inputContainer}>
             <label htmlFor={emailId} className={css.formLabel}>
               Email
             </label>
-            <div className={'InputIconContainer'}>
+            <div className={"InputIconContainer"}>
               <MdOutlineMailOutline className={`formIcon`} size={26} />
               <Field
                 type="email"
                 name="email"
                 id={emailId}
-                className={'inputField'}
+                className={"inputField"}
               />
             </div>
             <ErrorMessage
               name="email"
               component="span"
-              className={css.errorMessage}
+              className={'errorMessage'}
             />
           </div>
           <div className={css.inputContainer}>
-            <label htmlFor={passwordId}>
-              Password
-            </label>
-            <div className={'InputIconContainer'}>
+            <label htmlFor={passwordId}>Password</label>
+            <div className={"InputIconContainer"}>
               <RiLockPasswordLine className={`formIcon`} size={26} />
               <Field
                 type="password"
                 name="password"
                 id={passwordId}
-                className={'inputField'}
+                className={"inputField"}
               />
             </div>
             <ErrorMessage
               name="password"
               component="span"
-              className={css.errorMessage}
+              className={'errorMessage'}
             />
           </div>
         </div>

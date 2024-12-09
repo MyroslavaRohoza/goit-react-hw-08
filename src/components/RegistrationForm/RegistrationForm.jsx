@@ -71,7 +71,7 @@ const RegistrationForm = () => {
             <ErrorMessage
               name="name"
               component="span"
-              className={css.errorMessage}
+              className={'errorMessage'}
             />
           </div>
           <div className={css.inputContainer}>
@@ -90,7 +90,7 @@ const RegistrationForm = () => {
             <ErrorMessage
               name="email"
               component="span"
-              className={css.errorMessage}
+              className={'errorMessage'}
             />
           </div>
           <div className={css.inputContainer}>
@@ -109,7 +109,7 @@ const RegistrationForm = () => {
             <ErrorMessage
               name="password"
               component="span"
-              className={css.errorMessage}
+              className={'errorMessage'}
             />
           </div>
         </div>
